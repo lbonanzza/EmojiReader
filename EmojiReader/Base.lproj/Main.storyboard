@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="1pc-6M-G96">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emojiCell" rowHeight="74" id="1pc-6M-G96" customClass="EmojiTableViewCell" customModule="EmojiReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1pc-6M-G96" id="5xS-C4-EZ5">
@@ -58,6 +58,11 @@
                                         <constraint firstItem="QCf-SC-uWF" firstAttribute="top" secondItem="5xS-C4-EZ5" secondAttribute="top" constant="8" id="fbn-nq-DdG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="MIA-bd-5oP" id="eA1-CZ-yt2"/>
+                                    <outlet property="emojiLabel" destination="puk-0i-Wn4" id="UOG-Ms-fdr"/>
+                                    <outlet property="nameLabel" destination="OUi-Ug-6nC" id="9s9-p5-wtX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
