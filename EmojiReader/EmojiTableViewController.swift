@@ -8,6 +8,10 @@
 import UIKit
 
 class EmojiTableViewController: UITableViewController {
+    
+    let object = [
+        Emoji(emoji: "🥰", name: "Love", description: "It's love make to do", isFavourit: false)
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
