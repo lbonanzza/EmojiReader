@@ -59,6 +59,15 @@ class EmojiTableViewController: UITableViewController {
     
     
     //move objects
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedEmoji = objects.remove(at: sourceIndexPath.row)
+        objects.insert(movedEmoji, at: destinationIndexPath.row)
+        tableView.reloadData()
+    }
     
     
 }
