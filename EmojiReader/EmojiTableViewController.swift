@@ -73,7 +73,8 @@ class EmojiTableViewController: UITableViewController {
     // add swipe button
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let done = doneAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [done])
+        let favourite = favouriteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [done, favourite])
     }
     
     func doneAction(at indexPath: IndexPath) -> UIContextualAction {
@@ -87,5 +88,15 @@ class EmojiTableViewController: UITableViewController {
         return action
     }
     
-    
+    func favouriteAction(at indexPath: IndexPath) -> UIContextualAction {
+        var object = objects[indexPath.row]
+        let action = UIContextualAction(style: .normal, title: "Favourite") { (action, view, completion) in
+            object.isFavourit = !object.isFavourit
+            self.objects[indexPath.row] = object
+            completion(true)
+        }
+        action.backgroundColor = object.isFavourit ? .systemPurple : .systemGray
+        action.image = UIImage(systemName: "heart.circle")
+        return action
+    }
 }
